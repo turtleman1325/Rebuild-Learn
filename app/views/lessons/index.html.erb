@@ -1,20 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Table of Contents</h1><br>
-<h2>Simple Web Pages</h2>
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
   </thead>
 
   <tbody>
+    <% last_chapter = nil; last_section = nil %>
     <% @lessons.each do |lesson| %>
-      <tr><ul><li>
-              <td><%= link_to lesson.name, lesson %></td>
+    <% if last_section != lesson.section_id %>
+      <% section = lesson.section %>
+      <% if last_chapter != section.chapter_id %>
+        <tr>
+          <td colspan="3">
+            <h1><%= section.chapter.name %></h1>
+          </td>
+        </tr>
+        <% last_chapter = section.chapter_id %>
+      <% end %>
+      <tr>
+        <td colspan="3">
+      <h2><%= section.name %></h2>
+</td></tr>
+      <% last_section = section.id %>
+    <% end %>
+      <tr><ul>
+        <td><li><%= link_to lesson.name, lesson %></li></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </ul></tr>
@@ -23,6 +35,6 @@
 </table>
 
 <br>
-
+</body>
 <%= link_to 'New Lesson', new_lesson_path %>
 <%= link_to 'Sections', sections_path %>

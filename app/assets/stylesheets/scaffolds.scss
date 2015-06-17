@@ -5,6 +5,10 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
+h1, h2 {
+  margin-left: 25%;
+
+}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -88,4 +92,7 @@ div {
 }
 .form-control #searchsubmit{
     padding-right: 25px;
+}
+table{
+    margin-left: 25%
 }

@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.joins(section: :chapter).all.order "chapters.id ASC, sections.id ASC"
   end
 
   # GET /lessons/1
