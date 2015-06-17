@@ -1,16 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @lesson.name %>
-</p>
+</h1>
 
 <p>
-  <strong>Content:</strong>
   <%= @lesson.content %>
 </p>
+<p>
+  
+</p>
+
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>
+<%= link_to 'New Lesson', new_lesson_path %>
 <%= link_to('Previous Lesson', @lesson.previous) if @lesson.previous %>
 <%= link_to('Next Lesson', @lesson.next) if @lesson.next %>

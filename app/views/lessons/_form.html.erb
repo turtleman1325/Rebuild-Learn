@@ -15,6 +15,13 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.label :section %><br>
+
+    <%= collection_select :lesson, :section_id, Section.all, :id, :name, selected: @lesson.section_id %>
+  </div>
+
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>

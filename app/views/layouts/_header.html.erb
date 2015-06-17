@@ -1,1 +1,9 @@
-<h3>This is the header</h3>
+
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <%= link_to '/lessons' do %>
+      <%= image_tag "http://learn-lessons.herokuapp.com/images/logo.png", height: 25 %>
+      <% end %>
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+</form>

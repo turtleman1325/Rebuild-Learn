@@ -67,3 +67,25 @@ div {
     list-style: square;
   }
 }
+.navbar-default{
+    position: fixed;
+    background-color: #f8f8f8;
+}
+.footer{
+    position: fixed;
+    text-align: center ;
+    font-size: 16px ;
+    font-family: verdana ;
+    width: 600px ;
+    height: 50px ;
+    background-color: #f6f6f6 ;
+}
+.form-control{
+    float: right;
+    padding-right: 15px;
+    border-radius: 5px;
+    height: 20px;
+}
+.form-control #searchsubmit{
+    padding-right: 25px;
+}

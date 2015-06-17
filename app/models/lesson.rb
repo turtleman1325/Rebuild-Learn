@@ -1,9 +1,11 @@
 class Lesson < ActiveRecord::Base
+  belongs_to :section
+
   def previous
-    @lesson = Lesson.where("id < ?", id).last
+    @previous_lesson = Lesson.where("id < ?", id).last
   end
 
   def next
-    @lesson = Lesson.where("id > ?", id).first
+    @next_lesson = Lesson.where("id > ?", id).first
   end
 end
