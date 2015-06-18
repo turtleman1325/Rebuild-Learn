@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Table of Contents</h1><br>
+<h1>Table of Contents</h1>
 
 <table>
   <thead>
@@ -13,17 +13,18 @@
       <% section = lesson.section %>
       <% if last_chapter != section.chapter_id %>
         <tr>
-          <td colspan="3">
-            <h1><%= section.chapter.name %></h1>
+          <td>
+            <h1 colspan="3"><%= section.chapter.name %></h1>
           </td>
         </tr>
         <% last_chapter = section.chapter_id %>
       <% end %>
       <tr>
         <td colspan="3">
-      <h2><%= section.name %></h2>
-</td></tr>
-      <% last_section = section.id %>
+          <h2><%= section.name %></h2>
+        </td>
+      </tr>
+        <% last_section = section.id %>
     <% end %>
       <tr><ul>
         <td><li><%= link_to lesson.name, lesson %></li></td>
@@ -36,5 +37,8 @@
 
 <br>
 </body>
+<div class="center">
 <%= link_to 'New Lesson', new_lesson_path %>
 <%= link_to 'Sections', sections_path %>
+<%= link_to 'Chapters', chapters_path %>
+</div>

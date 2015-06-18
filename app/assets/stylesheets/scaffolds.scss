@@ -72,9 +72,12 @@ div {
     list-style: square;
   }
 }
-.navbar-default{
-    position: fixed;
+.navbar-header{
     background-color: #f8f8f8;
+}
+.navbar-logo{
+  height: 50px;
+  width: 200px;
 }
 .footer{
     position: fixed;
@@ -99,5 +102,16 @@ div {
     padding-right: 25px;
 }
 table{
-    margin-left: 25%
+    margin-left: 25%;
+}
+.collapse{
+  position:relative;
+  margin-top: -50px;
+}
+.center{
+  margin-left: 25%;
+}
+.toc{
+  margin-left: 25%;
+  
 }
